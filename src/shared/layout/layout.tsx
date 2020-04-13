@@ -1,0 +1,123 @@
+import React from "react";
+import classes from "./Layout.module.css";
+import MenuAppBar from "shared/navigation/AppBar/AppBar";
+import SideDrawer from "shared/navigation/sideDrawer/sideDrawer";
+import { ILoggedInUser } from "features/login/login.interface";
+import { connect } from "react-redux";
+import { IAppState } from "store/store";
+import { IMenu } from "./layout.interface";
+import genericClasses from "App.module.css";
+
+const menu = [
+  {
+    code: "1",
+    icon: "PersonOutlined",
+    id: 1,
+    level: 1,
+    name: "Partners",
+    parent_id: null,
+    sequence: 1,
+    state: "/partner",
+    permissions: ["007"],
+    isOpen: false,
+  },
+  {
+    code: "2",
+    icon: "PersonOutlined",
+    id: 2,
+    level: 1,
+    name: "Clients",
+    parent_id: null,
+    sequence: 2,
+    state: "/client",
+    permissions: ["008"],
+    isOpen: false,
+  },
+];
+
+interface IProps {
+  loggedInUser: ILoggedInUser;
+  routes: (menu: IMenu[]) => JSX.Element;
+}
+
+interface IState {
+  menu: IMenu[];
+}
+
+class Layout extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
+    super(props);
+    this.state = {
+      menu: menu,
+    };
+  }
+
+  // fetch menus by user roles
+  componentDidMount() {
+    this.getMenu();
+  }
+
+  render() {
+    return (
+      <div className={classes.AppBody}>
+        {/*Top nav bar*/}
+        <MenuAppBar loggedInUser={this.props.loggedInUser} />
+        <SideDrawer
+          menu={this.state.menu}
+          loggedInUser={this.props.loggedInUser}
+          accordianClick={this.onClickAccordianMenu}
+        />
+        <div
+          className={[classes.ModuleContainer, genericClasses.PosRel].join(" ")}
+        >
+          {this.props.routes(this.state.menu)}
+        </div>
+      </div>
+    );
+  }
+
+  //get menu array from api
+  getMenu = (): IMenu[] => {
+    return this.state.menu;
+    //   httpService.get<{}>(configUrl.apiServer + "/menu/getByUser", {}).then(
+    //     (res: any) => {
+    //       this.setState({
+    //         menu: res.data.menu,
+    //       });
+    //     },
+    //     (rej: any) => {
+    //       console.log(rej);
+    //     }
+    //   );
+  };
+
+  /** Function representing accordian button click event.
+   * @param menu index
+   * @returns {Void}
+   * update isOpen state
+   */
+  onClickAccordianMenu = (index: number): void => {
+    const openMenu = this.state.menu[index]; //get selected menu
+    openMenu.isOpen = !openMenu.isOpen; //update it's isOpen property
+
+    const menuArr = [...this.state.menu];
+    menuArr[index] = openMenu; //replace select menu in menu state
+
+    //update state
+    this.setState({
+      menu: menuArr,
+    });
+  };
+}
+
+const mapStateToProps = (state: IAppState) => {
+  return {
+    loggedInUser: state.login.loggedInUser as ILoggedInUser,
+  };
+};
+
+const mapDispatchToProps = (dispatch: any) => {
+  return {};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);

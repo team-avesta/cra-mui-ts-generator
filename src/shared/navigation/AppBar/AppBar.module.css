@@ -1,0 +1,15 @@
+
+/* .moduleSelectField {
+    color: #fff !important;
+} */
+
+.AppTitle {
+    width: 100%;
+    font-family: 'Ubuntu', 'NotoSans', sans-serif !important;
+    font-weight: 700 !important;
+}
+
+.WelcomeText {
+    font-family: 'Ubuntu', 'NotoSans', sans-serif !important;
+    font-weight: 500 !important;
+}
