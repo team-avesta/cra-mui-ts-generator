@@ -15,9 +15,9 @@ npm install
 npm start
 ```
 
-### Current layout view
+<!-- ### Current layout view -->
 
-![Dashboard View](https://imgur.com/2b6cwzE)
+<!-- ![Dashboard View](https://imgur.com/2b6cwzE) -->
 
 ## The idea behind the example
 
