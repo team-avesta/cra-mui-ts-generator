@@ -468,6 +468,27 @@ a {
   /* width: 33.33%; */
 }
 
+/* Default Routes - Login / Registration / Forgot Password  */
+
+.DefaultRouteContainer {
+  width: 100%;
+  height: 100vh;
+  background-image: url("assets/images/bg.svg");
+  background-repeat: no-repeat;
+  background-color: #ffe9a6;
+  background-attachment: fixed;
+  background-size: cover; 
+}
+
+.Layer {
+  background-color: rgba(0, 0, 0, 0.64);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* Grid */
 
 .GridHeader {

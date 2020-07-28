@@ -1,8 +1,3 @@
-/*
-	Author : Harsh H. Gandhi
-	Created On : 21-11-2018
-	This file was created to handle pagination
-*/
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import IconButton from '@material-ui/core/IconButton';
@@ -53,19 +48,16 @@ class TablePaginationActions extends Component {
 
 	handleBackButtonClick = event => {
 		const nextPage = this.props.page - 1;
-		//let offset = this.props.rowsPerPage * nextPage
 		this.props.onChangePage(event, nextPage);
 	};
 
 	handleNextButtonClick = event => {
 		const nextPage = this.props.page + 1;
-		//let offset = this.props.rowsPerPage * nextPage
 		this.props.onChangePage(event, nextPage);
 	};
 
 	handleLastPageButtonClick = event => {
 		const nextPage = Math.max(0, Math.ceil(this.props.count / this.props.rowsPerPage) - 1);
-		//let offset = this.props.rowsPerPage * nextPage
 		this.props.onChangePage(event, nextPage);
 	};
 }

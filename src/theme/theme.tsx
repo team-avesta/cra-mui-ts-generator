@@ -1,21 +1,21 @@
 import red from '@material-ui/core/colors/red';
 import { createMuiTheme } from '@material-ui/core/styles';
-import blueGrey from '@material-ui/core/colors/blueGrey';
+import amber from '@material-ui/core/colors/amber';
+import pink from '@material-ui/core/colors/pink';
 
 // A custom theme for this app
 const theme = createMuiTheme({
 	palette: {
-		//type: prefersDarkMode ? "dark" : "light",
 		primary: {
-			main: '#11CEAA',
-			light: '#64ffdc',
-			dark: '#009c7b',
-			contrastText: '#263238',
+			main: amber[500],
+			light: '#ffcd38',
+			dark: '#b28704',
+			contrastText: '#222',
 		},
 		secondary: {
-			main: blueGrey[900], //#263238
-			light: '#4f5b62',
-			dark: '#000a12',
+			main: pink.A200,
+			light: '#f73378',
+			dark: '#ab003c',
 			contrastText: '#fff',
 		},
 		error: {
@@ -65,7 +65,6 @@ const theme = createMuiTheme({
 		MuiMenuItem: {
 			root: {
 				minHeight: '24px',
-				// lineHeight: '20px'
 				lineHeight: 'normal',
 			},
 		},
@@ -82,7 +81,6 @@ const theme = createMuiTheme({
 				padding: '4px 20px',
 				minWidth: '45px',
 				borderRadius: '6px',
-				//boxShadow: 'none !important',
 				margin: '0 8px',
 				lineHeight: 'normal',
 			},
@@ -90,14 +88,12 @@ const theme = createMuiTheme({
 		MuiInputBase: {
 			root: {
 				fontSize: '0.9rem',
-				// lineHeight: '1.35'
 				lineHeight: 'normal',
 			},
 		},
 		MuiFormLabel: {
 			root: {
 				fontSize: '0.9rem',
-				// lineHeight: '1.35'
 				lineHeight: 'normal',
 			},
 		},

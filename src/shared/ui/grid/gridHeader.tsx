@@ -11,6 +11,7 @@ import headerStyles from './gridHeader.module.css';
 interface IProps {
 	title: string;
 	btnText?: string;
+	removeIcon?: boolean;
 	disabledButton?: boolean;
 	handleBtnClick: () => void;
 	isUserAllowed?: boolean;
@@ -30,14 +31,14 @@ const GridHeader: React.SFC<IProps> = (props): JSX.Element => {
 				</Typography>
 				<div className={genericClasses.ButtonContainer}>
 					{props.children}
-					{!props.isUserAllowed && (
+					{!props.isUserAllowed && props.btnText && (
 						<Button
 							disabled={props.disabledButton}
 							color="secondary"
 							variant="contained"
 							onClick={() => props.handleBtnClick()}
 						>
-							<AddIcon fontSize="small" className={genericClasses.Mr3} />
+							{!props.removeIcon && <AddIcon fontSize="small" className={genericClasses.Mr3} />}
 							{props.btnText}
 						</Button>
 					)}
@@ -49,7 +50,8 @@ const GridHeader: React.SFC<IProps> = (props): JSX.Element => {
 };
 
 GridHeader.defaultProps = {
-	isUserAllowed: false
+	isUserAllowed: false,
+	removeIcon: false,
 };
 
 export default GridHeader;

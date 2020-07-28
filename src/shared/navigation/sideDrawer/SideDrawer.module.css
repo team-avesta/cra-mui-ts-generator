@@ -99,25 +99,25 @@
 }
 
 .selected {
-    background-color: rgba(38,50,56,0.1) !important;
+    background-color: rgba(245,0,87,0.1) !important;
 }
 
 .selected .DrawerIcon {
-    color: #263238 !important;
+    color: #f50057 !important;
 }
 
 .selected .DrawerTitle {
-    color: #263238 !important;
+    color: #f50057 !important;
     font-weight: 500 !important;
 }
 
 .iconSelected {
-    color: #263238 !important;
+    color: #f50057 !important;
 }
 
 .ActiveDrawerTitle {
     text-decoration: none;
-    color: #263238;
+    color: #f50057;
 }
 
 .DrawerItem {

@@ -1,18 +1,19 @@
 import React from 'react';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Login from 'features/login/containers/login';
-import UserList from 'features/users/containers/usersList';
-import Layout from './shared/layout/layout';
-import { ILoginState } from 'features/login/login.interface';
+import { ILoginState } from 'features/login/store/login.interface';
 import { IAppState } from 'store/store';
-import ErrorDialog from 'shared/ui/errorDialog/errorDialog';
-import Toaster from 'shared/ui/toaster/toaster';
 import { IMenu } from 'shared/layout/layout.interface';
 import { hideToaster } from './shared/ui/toaster/toaster.actions';
 import { hideErrorDialog } from 'shared/ui/errorDialog/errorDialog.actions';
 import { IToasterState } from 'shared/ui/toaster/toaster.interface';
 import { IErrorDialogState } from 'shared/ui/errorDialog/errorDialog.interface';
+import ErrorDialog from 'shared/ui/errorDialog/errorDialog';
+import Toaster from 'shared/ui/toaster/toaster';
+import Layout from './shared/layout/layout';
+import Login from 'features/login/containers/login';
+import CandidateList from 'features/candidate/containers/candidateList';
+import CandidateForm from 'features/candidate/containers/candidateForm';
 
 interface IAppProps {
 	loginDetails: ILoginState;
@@ -54,8 +55,8 @@ class App extends React.Component<IAppProps> {
 		return routes;
 	};
 
-	//check user exist or not
 	checkUserExist = (): boolean => {
+		return false;
 		return Boolean(this.props.loginDetails.loggedInUser !== null);
 	};
 
@@ -74,7 +75,8 @@ class App extends React.Component<IAppProps> {
 				routes={(menu: IMenu[]) => {
 					return (
 						<Switch>
-							<Route path="/user" exact component={UserList} />
+							<Route path="/candidate/:id" exact component={CandidateForm} />
+							<Route path="/candidate" exact component={CandidateList} />
 							{menu.length > 0 ? <Redirect to={`${menu[0].state}`} /> : null}
 						</Switch>
 					);
@@ -93,8 +95,8 @@ const mapStateToProps = (state: IAppState) => {
 
 const mapDispatchToProps = (dispatch: any) => {
 	return {
-		hideToaster: () => dispatch(hideToaster()), // call hide toaster function
-		hideErrorDialog: () => dispatch(hideErrorDialog()), // call hide error dialog function
+		hideToaster: () => dispatch(hideToaster()),
+		hideErrorDialog: () => dispatch(hideErrorDialog()),
 	};
 };
 

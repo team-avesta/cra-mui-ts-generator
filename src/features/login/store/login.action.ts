@@ -17,8 +17,8 @@ import {
 	IAuthSetLoadingAction,
 	LoginActionTypes,
 	IAuthResetAction,
-	IAuthAction
-} from '../login.interface';
+	IAuthAction,
+} from './login.interface';
 import { AsyncAction } from 'shared/interface/interfaces';
 import { Dispatch } from 'redux';
 import { showSuccessToast } from 'shared/ui/toaster/toaster.actions';
@@ -33,11 +33,11 @@ export const doLogin: AsyncAction<ILoginState, IAuthResetAction> = (data: ILogin
 		dispatch<IAuthSetLoadingAction>(setLoader(false));
 		if (res) {
 			dispatch<IAuthAction>({
-				type: LoginActionTypes.AUTHACTION
+				type: LoginActionTypes.AUTHACTION,
 			});
 		}
 		return dispatch<IAuthResetAction>({
-			type: LoginActionTypes.RESETAUTHACTION
+			type: LoginActionTypes.RESETAUTHACTION,
 		});
 	};
 };
@@ -52,7 +52,7 @@ export const verifyOtp: AsyncAction<ILoginState, ILoginAction> = (data: IOtp) =>
 			localStorage.setItem('jwtToken', res.token);
 			return dispatch<ILoginAction>({
 				type: LoginActionTypes.LOGINSUCCESS,
-				loggedInUser: res.data
+				loggedInUser: res.data,
 			});
 		}
 	};
@@ -81,7 +81,7 @@ export const logout: AsyncAction<ILoginState, ILogoutAction> = () => {
 			localStorage.removeItem('jwtToken');
 			return dispatch<ILogoutAction>({
 				type: LoginActionTypes.LOGOUT,
-				loggedInUser: null
+				loggedInUser: null,
 			});
 		}
 	};
@@ -90,6 +90,6 @@ export const logout: AsyncAction<ILoginState, ILogoutAction> = () => {
 const setLoader = (value: boolean): IAuthSetLoadingAction => {
 	return {
 		value,
-		type: LoginActionTypes.SETLOADING
+		type: LoginActionTypes.SETLOADING,
 	};
 };

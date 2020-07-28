@@ -8,7 +8,7 @@
  * @since  10/10/2019
  */
 import { Reducer } from 'redux';
-import { ILoginState, LoginActions, LoginActionTypes } from '../login.interface';
+import { ILoginState, LoginActions, LoginActionTypes } from './login.interface';
 //import { parseJwt } from "shared/utility";
 
 // initally login user data will be null

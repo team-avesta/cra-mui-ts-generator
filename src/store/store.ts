@@ -4,8 +4,11 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import ErrorDialogReducer from 'shared/ui/errorDialog/errorDialog.reducer';
 import LoginReducer from 'features/login/store/login.reducer';
 import ToasterReducer from 'shared/ui/toaster/toaster.reducer';
+import CandidateReducer from 'features/candidate/store/reducer/candidate.reducer';
+
 // Interfaces
-import { ILoginState } from 'features/login/login.interface';
+import { ICandidateState } from 'features/candidate/interface/candidate.interface';
+import { ILoginState } from 'features/login/store/login.interface';
 import { IErrorDialogState } from 'shared/ui/errorDialog/errorDialog.interface';
 import { IToasterState } from 'shared/ui/toaster/toaster.interface';
 
@@ -19,12 +22,14 @@ export interface IAppState {
 	login: ILoginState;
 	toaster: IToasterState;
 	errorDialog: IErrorDialogState;
+	candidate: ICandidateState;
 }
 
 const reducers = {
 	login: LoginReducer,
 	toaster: ToasterReducer,
 	errorDialog: ErrorDialogReducer,
+	candidate: CandidateReducer,
 };
 
 const rootReducer = combineReducers<IAppState>(reducers);

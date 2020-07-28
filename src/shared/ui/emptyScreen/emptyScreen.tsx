@@ -1,12 +1,12 @@
 import React from 'react';
 import classes from './emptyScreen.module.css';
-// import SentimentDissatisfiedOutlinedIcon from '@material-ui/icons/SentimentDissatisfiedOutlined';
 import NoDataSvg from 'shared/ui/svg/noDataLogo';
 import Typography from '@material-ui/core/Typography';
 
 interface IProps {
 	emptyText: string;
 }
+
 const EmptyScreen: React.SFC<IProps> = (props): JSX.Element => {
 	const emptyScreen = () => {
 		return (

@@ -9,7 +9,7 @@
  */
 import React from 'react';
 //import { menu } from 'shared/layout/layout';
-import { ILoggedInUser } from 'features/login/login.interface';
+import { ILoggedInUser } from 'features/login/store/login.interface';
 import { NavLink } from 'react-router-dom';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';

@@ -1,6 +1,6 @@
 import { queryStringify } from '../shared/utility';
 import store from '../store/store';
-import { ILogoutAction, LoginActionTypes } from '../features/login/login.interface';
+import { ILogoutAction, LoginActionTypes } from '../features/login/store/login.interface';
 import { IToasterAction } from './ui/toaster/toaster.interface';
 import { showFailureToast } from '../shared/ui/toaster/toaster.actions';
 /**
@@ -38,7 +38,7 @@ function checkStatus(response: any): Promise<unknown> {
 		//dispatch logout function
 		store.dispatch<ILogoutAction>({
 			type: LoginActionTypes.LOGOUT,
-			loggedInUser: null
+			loggedInUser: null,
 		});
 		//store.dispatch(handleActionDispatch(actionTypes.LOGOUT, null));
 		const unAuthError = new Error(response.statusText);
@@ -54,27 +54,27 @@ function json(response: any) {
 
 function post<T>(url: string, params: T): Promise<unknown> {
 	const jwtToken: any = localStorage.getItem('jwtToken');
-	return new Promise(function(resolve, reject) {
+	return new Promise(function (resolve, reject) {
 		fetch(url, {
 			method: 'POST',
 			credentials: 'include',
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
-				'x-auth-token': jwtToken
+				'x-auth-token': jwtToken,
 			},
-			body: JSON.stringify(params)
+			body: JSON.stringify(params),
 		})
 			.then(checkStatus)
 			.then(json)
-			.then(data => {
+			.then((data) => {
 				if (!data.success) {
 					reject(extractErrorData(data));
 				} else {
 					resolve(data);
 				}
 			})
-			.catch(error => {
+			.catch((error) => {
 				reject(extractErrorData(error));
 				console.log('request failed', error);
 			});
@@ -90,7 +90,7 @@ function get<T>(url: string, params: T): Promise<unknown> {
 		url = `${url}?${queryStringify<T>(params)}`;
 	}
 	const jwtToken: any = localStorage.getItem('jwtToken');
-	return new Promise(function(resolve, reject) {
+	return new Promise(function (resolve, reject) {
 		fetch(url, {
 			method: 'GET',
 			//signal: abortSignal,
@@ -98,19 +98,19 @@ function get<T>(url: string, params: T): Promise<unknown> {
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
-				'x-auth-token': jwtToken
-			}
+				'x-auth-token': jwtToken,
+			},
 		})
 			.then(checkStatus)
 			.then(json)
-			.then(data => {
+			.then((data) => {
 				if (!data.success) {
 					reject(extractErrorData(data));
 				} else {
 					resolve(data);
 				}
 			})
-			.catch(error => {
+			.catch((error) => {
 				reject(extractErrorData(error));
 				console.log('request failed', error);
 			});
@@ -119,27 +119,27 @@ function get<T>(url: string, params: T): Promise<unknown> {
 
 function put<T>(url: string, params: T) {
 	const jwtToken: any = localStorage.getItem('jwtToken');
-	return new Promise(function(resolve, reject) {
+	return new Promise(function (resolve, reject) {
 		fetch(url, {
 			method: 'PUT',
 			credentials: 'include',
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
-				'x-auth-token': jwtToken
+				'x-auth-token': jwtToken,
 			},
-			body: JSON.stringify(params)
+			body: JSON.stringify(params),
 		})
 			.then(checkStatus)
 			.then(json)
-			.then(data => {
+			.then((data) => {
 				if (!data.success) {
 					reject(extractErrorData(data));
 				} else {
 					resolve(data);
 				}
 			})
-			.catch(error => {
+			.catch((error) => {
 				reject(extractErrorData(error));
 				console.log('request failed', error);
 			});
@@ -148,7 +148,7 @@ function put<T>(url: string, params: T) {
 
 function remove(url: string, params?: number) {
 	const jwtToken: any = localStorage.getItem('jwtToken');
-	return new Promise(function(resolve, reject) {
+	return new Promise(function (resolve, reject) {
 		//url = `${url}/${params}`;
 		return fetch(url, {
 			method: 'DELETE',
@@ -156,20 +156,20 @@ function remove(url: string, params?: number) {
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
-				'x-auth-token': jwtToken
+				'x-auth-token': jwtToken,
 			},
-			body: JSON.stringify(params)
+			body: JSON.stringify(params),
 		})
 			.then(checkStatus)
 			.then(json)
-			.then(data => {
+			.then((data) => {
 				if (!data.success) {
 					reject(extractErrorData(data));
 				} else {
 					resolve(data);
 				}
 			})
-			.catch(error => {
+			.catch((error) => {
 				reject(extractErrorData(error));
 				console.log('request failed', error);
 			});
