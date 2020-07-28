@@ -1,6 +1,6 @@
 import { queryStringify } from '../shared/utility';
 import store from '../store/store';
-import { ILogoutAction, LoginActionTypes } from '../features/login/store/login.interface';
+import { ILogoutAction, LoginActionTypes } from '../features/login/interface/login.interface';
 import { IToasterAction } from './ui/toaster/toaster.interface';
 import { showFailureToast } from '../shared/ui/toaster/toaster.actions';
 /**

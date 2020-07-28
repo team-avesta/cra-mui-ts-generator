@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Layout.module.css';
 import MenuAppBar from 'shared/navigation/AppBar/AppBar';
 import SideDrawer from 'shared/navigation/sideDrawer/sideDrawer';
-import { ILoggedInUser } from 'features/login/store/login.interface';
+import { ILoggedInUser } from 'features/login/interface/login.interface';
 import { connect } from 'react-redux';
 import { IAppState } from 'store/store';
 import { IMenu } from './layout.interface';

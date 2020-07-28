@@ -22,7 +22,7 @@ import Grid from '@material-ui/core/Grid';
 import { connect } from 'react-redux';
 import { logout } from 'features/login/store/login.action';
 import genericClasses from 'App.module.css';
-import { ILoggedInUser } from 'features/login/store/login.interface';
+import { ILoggedInUser } from 'features/login/interface/login.interface';
 
 interface IProps extends RouteComponentProps {
 	logout: typeof logout;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { ILoginState } from 'features/login/store/login.interface';
+import { ILoginState } from 'features/login/interface/login.interface';
 import { IAppState } from 'store/store';
 import { IMenu } from 'shared/layout/layout.interface';
 import { hideToaster } from './shared/ui/toaster/toaster.actions';

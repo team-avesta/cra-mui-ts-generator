@@ -18,7 +18,7 @@ import {
 	LoginActionTypes,
 	IAuthResetAction,
 	IAuthAction,
-} from './login.interface';
+} from '../interface/login.interface';
 import { AsyncAction } from 'shared/interface/interfaces';
 import { Dispatch } from 'redux';
 import { showSuccessToast } from 'shared/ui/toaster/toaster.actions';

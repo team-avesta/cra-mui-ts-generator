@@ -8,7 +8,7 @@
  * @since  10/10/2019
  */
 import { Reducer } from 'redux';
-import { ILoginState, LoginActions, LoginActionTypes } from './login.interface';
+import { ILoginState, LoginActions, LoginActionTypes } from '../interface/login.interface';
 //import { parseJwt } from "shared/utility";
 
 // initally login user data will be null
@@ -33,6 +33,8 @@ const loggedInUser = {
 const initialState: ILoginState = {
 	//loggedInUser: userDataFromToken,
 	loggedInUser: loggedInUser,
+	authActionCompleted: false,
+	loading: false,
 };
 
 const reducer: Reducer<ILoginState, LoginActions> = (state = initialState, action) => {

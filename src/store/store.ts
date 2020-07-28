@@ -8,7 +8,7 @@ import CandidateReducer from 'features/candidate/store/reducer/candidate.reducer
 
 // Interfaces
 import { ICandidateState } from 'features/candidate/interface/candidate.interface';
-import { ILoginState } from 'features/login/store/login.interface';
+import { ILoginState } from 'features/login/interface/login.interface';
 import { IErrorDialogState } from 'shared/ui/errorDialog/errorDialog.interface';
 import { IToasterState } from 'shared/ui/toaster/toaster.interface';
 
