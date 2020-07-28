@@ -37,7 +37,7 @@
     overflow-y: auto;
     flex-direction: column;
     background-color: #fcfcfc;
-    margin-top: 48px;
+    margin-top: 64px;
     overflow-x: hidden;
     transition: width 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
     border-right: 1px solid rgba(0, 0, 0, 0.12);
@@ -99,25 +99,25 @@
 }
 
 .selected {
-    background-color: #FFF8E1 !important;
+    background-color: rgba(38,50,56,0.1) !important;
 }
 
 .selected .DrawerIcon {
-    color: #eea849 !important;
+    color: #263238 !important;
 }
 
 .selected .DrawerTitle {
-    color: #eea849 !important;
+    color: #263238 !important;
     font-weight: 500 !important;
 }
 
 .iconSelected {
-    color: #eea849 !important;
+    color: #263238 !important;
 }
 
 .ActiveDrawerTitle {
     text-decoration: none;
-    color: #eea849;
+    color: #263238;
 }
 
 .DrawerItem {

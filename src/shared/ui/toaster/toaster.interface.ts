@@ -1,5 +1,10 @@
 import { Action } from 'shared/interface/interfaces';
 
+export enum ToasterActionTypes {
+	SHOW_TOASTER = 'SHOW_TOASTER',
+	HIDE_TOASTER = 'HIDE_TOASTER',
+}
+
 export interface IToasterState {
 	showToaster: boolean;
 	toastMessage: string | null;

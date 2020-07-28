@@ -204,9 +204,7 @@ body {
 }
 
 .ImageContainer {
-  width: 160px;
-  /* border: 1px solid lightgrey; */
-  /* border-radius: 8px; */
+  width: 160px;  
 }
 
 .Br8 {
@@ -413,37 +411,6 @@ body {
   box-sizing: border-box;
 }
 
-/* .SearchContainer {
-	position: relative;
-	border: 1px solid rgba(0, 0, 0, 0.42);
-	display: flex;
-	flex-direction: row;
-	position: relative;
-	display: flex;
-	flex-direction: row;
-	border-radius: 8px;
-	margin-bottom: 32px;
-}
-
-.SearchContainer:hover {
-	border: 1px solid inherit;
-}
-
-.SearchContainer:focus-within {
-	border: 1px solid #FB8C00;
-	box-sizing: border-box;
-}
-
-.SearchIcon {
-	width: 50px;
-	height: 100%;
-	position: absolute;
-	pointer-events: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: rgba(0, 0, 0, 0.42);
-} */
 
 /* Formik Form */
 
@@ -571,200 +538,6 @@ a {
   background-color: rgba(0, 0, 0, 0.12) !important;
 }
 
-/* List */
-
-.ListPaperHeight {
-  height: calc(100vh - 155px);
-}
-
-.TCListPaperHeight {
-  height: calc(100vh - 201px);
-}
-
-.TCFormPaperHeight {
-  min-height: calc(100vh - 179px);
-  /* height: 100%; */
-}
-
-.GridPaperHeight {
-  height: calc(100vh - 145px);
-}
-
-/* Default Routes - Login / Registration / Forgot Password  */
-
-.DefaultRouteContainer {
-  width: 100%;
-  height: 100vh;
-  background-image: url("assets/images//bg.png");
-  background-repeat: repeat;
-}
-
-.RoundBadgeDiv {
-  margin-right: 8px;
-  /* display: flex;
-	flex-direction: row; */
-}
-
-.RoundBadgeOuter {
-  /* border: 1px solid lightgrey; */
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 4px;
-}
-
-.LegendRoundBadgeOuter {
-  /* border: 1px solid lightgrey; */
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 4px;
-}
-
-.RoundBadgeInner {
-  /* border: 1px solid lightgrey; */
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.LegendRoundBadgeInner {
-  /* border: 1px solid lightgrey; */
-  border-radius: 50%;
-  background-color: #fafafa;
-  width: 10px;
-  height: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.BadgeContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.RoundBadge {
-  /* border: 1px solid lightgrey; */
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 4px;
-}
-
-.RoundBadgeFont {
-  /* line-height: 0px !important; */
-  font-size: 0.7rem !important;
-}
-
-.PendingBadge {
-  background-color: #ffa726;
-}
-
-.ApprovedBadge {
-  background-color: #8bc34a;
-}
-
-.RejectedBadge {
-  background-color: #ff5252;
-}
-
-.RedColorBadge {
-  background-color: #ffcdd2;
-}
-
-.GreenColorBadge {
-  background-color: #dcedc8;
-}
-
-.YellowColorBadge {
-  background-color: #ffc400;
-}
-
-.ECB {
-  background-color: #dcedc8;
-}
-
-.BACB {
-  background-color: #ffecb3;
-}
-
-.ACB {
-  background-color: #ffe0b2;
-}
-
-.AACB {
-  background-color: #ffccbc;
-}
-
-.DCB {
-  background-color: #ffcdd2;
-}
-
-.FilterContainer {
-  min-width: 350px;
-  padding: 16px;
-}
-
-.EditorContainer {
-  position: relative;
-}
-
-.EditorOverlay {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 1;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-.HeaderTitle {
-  font-family: "Ubuntu", "NotoSans", sans-serif !important;
-  /* font-weight: 600 !important; */
-  font-size: 1rem !important;
-  color: #333 !important;
-}
-
-.PrimaryLangBadge {
-  display: flex;
-  width: 16px;
-  height: 16px;
-  justify-content: center;
-  align-items: center;
-  background-color: lightpink;
-  border-radius: 50%;
-}
-
-.PrimaryLangBadge p {
-  margin: 4px;
-  font-size: 0.7rem !important;
-}
-
-.CompletedText {
-  color: var(--emerald) !important;
-}
-
-.RejectedText {
-  color: var(--cherry) !important;
-}
-
-.PendingText {
-  color: var(--orange) !important;
-}
 
 .Truncate {
   white-space: nowrap;
@@ -772,6 +545,4 @@ a {
   text-overflow: ellipsis;
 }
 
-.FormLabel {
-  font-family: "Ubuntu", "NotoSans", sans-serif !important;
-}
+

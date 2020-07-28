@@ -1,8 +1,8 @@
 .AppBody {
-  height: calc(100vh - 48px);
+  height: calc(100vh - 64px);
   overflow: hidden;
   background-color: #f4f4f4;
-  margin-top: 48px;
+  margin-top: 64px;
   display: flex;
   flex-direction: row;
 }
