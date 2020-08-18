@@ -10,8 +10,6 @@ cd create-react-app-with-typescript or App Name
 
 or download this project and extract it in your project directory
 
-## 📖 How to use
-
 #### Install it and run:
 
 ```sh
@@ -66,4 +64,6 @@ npm build
 
 - Add Docker files
 - App.js
+- git precommit hooks
+- prettier and eslint configs
 - feel free to contribute...
