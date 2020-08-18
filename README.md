@@ -55,7 +55,7 @@ npm build
 - Empty Screen
 - Form Components such as Text Field, Text Area, Checkbox, Select Field, Date Picker and Time Picker all wrapped in Formik
 
-## 🛠 Working Example Modules (all typescript)
+## 🛠 Working Example Modules
 
 - **Login**
   - Working Login module along with JWT token in local storage.
