@@ -10,14 +10,14 @@ cd create-react-app-with-typescript or App Name
 
 or download this project and extract it in your project directory
 
-#### Install it and run:
+#### Install it and run 🏃:
 
 ```sh
 npm install
 npm start
 ```
 
-#### Install it and run 🏃:
+#### Build
 
 ```sh
 npm build
