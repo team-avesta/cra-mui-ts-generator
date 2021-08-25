@@ -118,7 +118,7 @@ export const LnDatePicker = (props) => {
 	const field = props.field;
 	return (
 		<MuiPickersUtilsProvider utils={DateFnsUtils}>
-			<Grid container justify="flex-start">
+			<Grid container justifyContent="flex-start">
 				<DatePicker
 					autoOk
 					name={field.name}
@@ -138,7 +138,7 @@ export const LnTimePicker = (props) => {
 	const field = props.field;
 	return (
 		<MuiPickersUtilsProvider utils={DateFnsUtils}>
-			<Grid container justify="flex-start">
+			<Grid container justifyContent="flex-start">
 				<TimePicker
 					autoOk
 					name={field.name}
@@ -170,4 +170,3 @@ export const LnCheckbox = (props) => {
 		/>
 	)
 }
-

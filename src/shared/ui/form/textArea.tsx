@@ -6,30 +6,30 @@ import LnInputError from 'shared/inputError';
 import FieldContainer from './fieldContainer';
 
 interface IProps {
-	type?: string;
-	fullWIdth?: boolean;
-	label: string;
-	placeholder: string;
-	name: string;
+  type?: string;
+  fullWidth?: boolean;
+  label: string;
+  placeholder: string;
+  name: string;
 }
 const TextArea: React.SFC<IProps> = (props): JSX.Element => {
-	return (
-		<FieldContainer label={props.label}>
-			<FormikField
-				type={props.type}
-				className={props.fullWIdth ? genericClasses.FullWidthFormControl : genericClasses.FormControl}
-				placeholder={props.placeholder}
-				name={props.name}
-				component={LnTextArea}
-				required
-			/>
-			<ErrorMessage name={props.name} component={LnInputError} />
-		</FieldContainer>
-	);
+  return (
+    <FieldContainer label={props.label}>
+      <FormikField
+        type={props.type}
+        className={props.fullWidth ? genericClasses.FullWidthFormControl : genericClasses.FormControl}
+        placeholder={props.placeholder}
+        name={props.name}
+        component={LnTextArea}
+        required
+      />
+      <ErrorMessage name={props.name} component={LnInputError} />
+    </FieldContainer>
+  );
 };
 
 TextArea.defaultProps = {
-	type: 'text'
+  type: 'text',
 };
 
 export default TextArea;

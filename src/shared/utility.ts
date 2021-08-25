@@ -1,12 +1,9 @@
 // import React from 'react';
-import queryStringParser from "query-string";
+import queryStringParser from 'query-string';
 //import format from "date-fns/format";
 
 //updateObject will update the values of the given object
-export const updateObject = function updateObject<T, U>(
-  oldObject: T,
-  updatedProperties: U
-): T {
+export const updateObject = function updateObject<T, U>(oldObject: T, updatedProperties: U): T {
   return {
     ...oldObject,
     ...updatedProperties,
@@ -20,17 +17,13 @@ export const queryStringify = function queryStringify<T>(queryParams: T) {
 };
 
 /* parse URL string into object with params and it's value */
-export const queryParse = (
-  queryString: string
-): queryStringParser.ParsedQuery<string> => {
+export const queryParse = (queryString: string): queryStringParser.ParsedQuery<string> => {
   return queryStringParser.parse(queryString);
 };
 
-export const removeNullAndEmptyKeysFromObject = function removeNullAndEmptyKeysFromObject<
-  T
->(obj: T) {
-  if (typeof obj !== "object") {
-    throw Error("Argument should be of type object");
+export const removeNullAndEmptyKeysFromObject = function removeNullAndEmptyKeysFromObject<T>(obj: T) {
+  if (typeof obj !== 'object') {
+    throw Error('Argument should be of type object');
   }
 
   const newObj: T = obj;
@@ -54,7 +47,7 @@ export const createFormObject = function createFormObject<T>(dataModel: T) {
   const obj: any = {};
   for (const key in dataModel) {
     if (dataModel[key] === null) {
-      obj[key] = "";
+      obj[key] = '';
     } else {
       obj[key] = dataModel[key];
     }
@@ -95,8 +88,8 @@ export const assertModel = <T>(model: T) => {
  */
 export const parseJwt = (token: string) => {
   try {
-    const base64Url = token.split(".")[1];
-    const base64 = base64Url.replace("-", "+").replace("_", "/");
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace('-', '+').replace('_', '/');
     return JSON.parse(window.atob(base64));
   } catch (e) {
     return null;
@@ -113,10 +106,10 @@ export const getBase64 = (file: File, max_size: number): any => {
   return new Promise((resolve, reject) => {
     if (file.size > max_size_bytes) {
       //console.log('file is too big at ' + file.size / 1024 + 'Kb');
-      reject("File exceeds max size of " + max_size + "Kb");
+      reject('File exceeds max size of ' + max_size + 'Kb');
     } else {
       const reader = new FileReader();
-      reader.onload = (x) => resolve(reader.result);
+      reader.onload = () => resolve(reader.result);
       reader.readAsDataURL(file); // or readAsText(file) to get raw content
     }
   });
@@ -135,7 +128,7 @@ export const deepCopy = (data: any): any => {
  * @param {object} - prevObj - is the old form object
  * it will prase the it will compare those two object deeply and return the boolean value, if dirty then true else false
  */
-export const isFormDirty = (currObj: object, prevObj: object): boolean => {
+export const isFormDirty = (currObj: any, prevObj: any): boolean => {
   // checking form is getting dirty , is yes then trigger api else just pass to next screen
   let dirty = false;
   if (JSON.stringify(currObj) === JSON.stringify(prevObj)) {
@@ -149,19 +142,15 @@ export const isFormDirty = (currObj: object, prevObj: object): boolean => {
 export const formatDate = (date: string): string => {
   const dateFormat = new Date(date);
   return (
-    ("0" + dateFormat.getDate()).slice(-2) +
-    "-" +
-    ("0" + dateFormat.getMonth()).slice(-2) +
-    "-" +
+    ('0' + dateFormat.getDate()).slice(-2) +
+    '-' +
+    ('0' + dateFormat.getMonth()).slice(-2) +
+    '-' +
     dateFormat.getFullYear()
   );
 };
 
 export const formatTime = (time: string): string => {
   const dateFormat = new Date(time);
-  return (
-    ("0" + dateFormat.getHours()).slice(-2) +
-    ":" +
-    ("0" + dateFormat.getMinutes()).slice(-2)
-  );
+  return ('0' + dateFormat.getHours()).slice(-2) + ':' + ('0' + dateFormat.getMinutes()).slice(-2);
 };

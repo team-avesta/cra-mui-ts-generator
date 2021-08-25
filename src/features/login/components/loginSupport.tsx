@@ -18,33 +18,33 @@ import PhoneIcon from '@material-ui/icons/PhoneAndroidOutlined';
 import Typography from '@material-ui/core/Typography';
 
 const LoginSupport = (): JSX.Element => {
-	return (
-		<Paper elevation={1} className={[genericClasses.Mt32, genericClasses.P20].join(' ')}>
-			<Grid container direction="column" justify="flex-start">
-				<Typography
-					variant="body2"
-					color="textSecondary"
-					className={[genericClasses.Mb16, genericClasses.TextCenter].join(' ')}
-				>
-					Support
-				</Typography>
-				<Grid container direction="row" justify="space-between" alignItems="center">
-					<Grid item container direction="row" alignItems="center" justify="center" xs={6}>
-						<EmailIcon className={[classes.SupportIcon, genericClasses.Mr8].join(' ')} />
-						<Typography variant="body1" color="textSecondary">
-							help@xxxxxxxxxx.com
-						</Typography>
-					</Grid>
-					<Grid item container direction="row" alignItems="center" justify="center" xs={6}>
-						<PhoneIcon className={[classes.SupportIcon, genericClasses.Mr8].join(' ')} />
-						<Typography variant="body1" color="textSecondary">
-							+91-94XXXXXXXX
-						</Typography>
-					</Grid>
-				</Grid>
-			</Grid>
-		</Paper>
-	);
+  return (
+    <Paper elevation={1} className={[genericClasses.Mt32, genericClasses.P20].join(' ')}>
+      <Grid container direction="column" justifyContent="flex-start">
+        <Typography
+          variant="body2"
+          color="textSecondary"
+          className={[genericClasses.Mb16, genericClasses.TextCenter].join(' ')}
+        >
+          Support
+        </Typography>
+        <Grid container direction="row" justifyContent="space-between" alignItems="center">
+          <Grid item container direction="row" alignItems="center" justifyContent="center" xs={6}>
+            <EmailIcon className={[classes.SupportIcon, genericClasses.Mr8].join(' ')} />
+            <Typography variant="body1" color="textSecondary">
+              help@xxxxxxxxxx.com
+            </Typography>
+          </Grid>
+          <Grid item container direction="row" alignItems="center" justifyContent="center" xs={6}>
+            <PhoneIcon className={[classes.SupportIcon, genericClasses.Mr8].join(' ')} />
+            <Typography variant="body1" color="textSecondary">
+              +91-94XXXXXXXX
+            </Typography>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Paper>
+  );
 };
 
 export default LoginSupport;

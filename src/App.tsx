@@ -1,25 +1,25 @@
-import React from "react";
-import { Route, Switch, withRouter, Redirect } from "react-router-dom";
-import { connect } from "react-redux";
-import { ILoginState } from "features/login/interface/login.interface";
-import { IAppState } from "store/store";
-import { IMenu } from "shared/layout/layout.interface";
-import { hideToaster } from "./shared/ui/toaster/toaster.actions";
-import { hideErrorDialog } from "shared/ui/errorDialog/errorDialog.actions";
-import { IToasterState } from "shared/ui/toaster/toaster.interface";
-import { IErrorDialogState } from "shared/ui/errorDialog/errorDialog.interface";
-import ErrorDialog from "shared/ui/errorDialog/errorDialog";
-import Toaster from "shared/ui/toaster/toaster";
-import Layout from "./shared/layout/layout";
-import Login from "features/login/containers/login";
-import CandidateList from "features/candidate/containers/candidateList";
-import CandidateForm from "features/candidate/containers/candidateForm";
+import React from 'react';
+import { Route, Switch, withRouter, Redirect, RouteComponentProps } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { ILoginState } from 'features/login/interface/login.interface';
+import { IAppState } from 'store/store';
+import { IMenu } from 'shared/layout/layout.interface';
+import { hideToaster } from './shared/ui/toaster/toaster.actions';
+import { hideErrorDialog } from 'shared/ui/errorDialog/errorDialog.actions';
+import { IToasterState } from 'shared/ui/toaster/toaster.interface';
+import { IErrorDialogState } from 'shared/ui/errorDialog/errorDialog.interface';
+import ErrorDialog from 'shared/ui/errorDialog/errorDialog';
+import Toaster from 'shared/ui/toaster/toaster';
+import Layout from './shared/layout/layout';
+import Login from 'features/login/containers/login';
+import CandidateList from 'features/candidate/containers/candidateList';
+import CandidateForm from 'features/candidate/containers/candidateForm';
 
-interface IAppProps {
-  loginDetails: ILoginState;
-  toaster: IToasterState;
+interface IAppProps extends RouteComponentProps {
   hideToaster: typeof hideToaster;
   hideErrorDialog: typeof hideErrorDialog;
+  loginDetails: ILoginState;
+  toaster: IToasterState;
   errorDialog: IErrorDialogState;
 }
 
@@ -56,8 +56,7 @@ class App extends React.Component<IAppProps> {
   };
 
   checkUserExist = (): boolean => {
-    //return false;
-    return Boolean(this.props.loginDetails.loggedInUser !== null);
+    return true;
   };
 
   getDefaultRoute = (): JSX.Element => {

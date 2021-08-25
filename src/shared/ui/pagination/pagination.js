@@ -43,31 +43,30 @@ class TablePaginationActions extends Component {
 	}
 
 	handleFirstPageButtonClick = event => {
-		this.props.onChangePage(event, 0);
+		this.props.onPageChange(event, 0);
 	};
 
 	handleBackButtonClick = event => {
 		const nextPage = this.props.page - 1;
-		this.props.onChangePage(event, nextPage);
+		this.props.onPageChange(event, nextPage);
 	};
 
 	handleNextButtonClick = event => {
 		const nextPage = this.props.page + 1;
-		this.props.onChangePage(event, nextPage);
+		this.props.onPageChange(event, nextPage);
 	};
 
 	handleLastPageButtonClick = event => {
 		const nextPage = Math.max(0, Math.ceil(this.props.count / this.props.rowsPerPage) - 1);
-		this.props.onChangePage(event, nextPage);
+		this.props.onPageChange(event, nextPage);
 	};
 }
 
 TablePaginationActions.propTypes = {
 	count: PropTypes.number.isRequired,
-	onChangePage: PropTypes.func.isRequired,
+	onPageChange: PropTypes.func.isRequired,
 	page: PropTypes.number.isRequired,
 	rowsPerPage: PropTypes.number.isRequired
 };
 
 export default TablePaginationActions
-
