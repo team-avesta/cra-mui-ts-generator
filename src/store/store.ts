@@ -13,28 +13,28 @@ import { IErrorDialogState } from 'shared/ui/errorDialog/errorDialog.interface';
 import { IToasterState } from 'shared/ui/toaster/toaster.interface';
 
 interface IWindow {
-	__REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any;
+  __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any;
 }
 
 declare let window: IWindow;
 
 export interface IAppState {
-	login: ILoginState;
-	toaster: IToasterState;
-	errorDialog: IErrorDialogState;
-	candidate: ICandidateState;
+  login: ILoginState;
+  toaster: IToasterState;
+  errorDialog: IErrorDialogState;
+  candidate: ICandidateState;
 }
 
 const reducers = {
-	login: LoginReducer,
-	toaster: ToasterReducer,
-	errorDialog: ErrorDialogReducer,
-	candidate: CandidateReducer,
+  login: LoginReducer,
+  toaster: ToasterReducer,
+  errorDialog: ErrorDialogReducer,
+  candidate: CandidateReducer,
 };
 
 const rootReducer = combineReducers<IAppState>(reducers);
 const composeEnhancers =
-	process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose : null || compose;
+  process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose : null || compose;
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 export default store;

@@ -11,9 +11,9 @@ import { updateObject } from 'shared/utility';
 import { IErrorDialogState, IErrorDialogAction, ErrorDialogActionTypes } from './errorDialog.interface';
 
 const initialState: IErrorDialogState = {
-	showDialog: false,
-	message: null,
-	//toastType: null,
+  showDialog: false,
+  message: null,
+  //toastType: null,
 };
 
 /** Function represents toaster reducer
@@ -23,14 +23,14 @@ const initialState: IErrorDialogState = {
  */
 
 const reducer = (state: IErrorDialogState = initialState, action: IErrorDialogAction): IErrorDialogState => {
-	switch (action.type) {
-		case ErrorDialogActionTypes.SHOW_DIALOG:
-			return handleErrorDialog(state, action);
-		case ErrorDialogActionTypes.HIDE_DIALOG:
-			return handleErrorDialog(state, action);
-		default:
-			return state;
-	}
+  switch (action.type) {
+    case ErrorDialogActionTypes.SHOW_DIALOG:
+      return handleErrorDialog(state, action);
+    case ErrorDialogActionTypes.HIDE_DIALOG:
+      return handleErrorDialog(state, action);
+    default:
+      return state;
+  }
 };
 
 /** Function update toaster state in store's
@@ -39,10 +39,10 @@ const reducer = (state: IErrorDialogState = initialState, action: IErrorDialogAc
  * @returns {object}
  */
 const handleErrorDialog = (state: IErrorDialogState, action: IErrorDialogAction): IErrorDialogState => {
-	return updateObject<IErrorDialogState, IErrorDialogState>(state, {
-		showDialog: action.showDialog,
-		message: action.message ? action.message : state.message,
-	});
+  return updateObject<IErrorDialogState, IErrorDialogState>(state, {
+    showDialog: action.showDialog,
+    message: action.message ? action.message : state.message,
+  });
 };
 
 export default reducer;

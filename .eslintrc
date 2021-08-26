@@ -22,7 +22,6 @@
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended"
-        //"plugin:prettier/recommended"
     ],
     "settings": {
         "react": {
@@ -30,13 +29,7 @@
         }
     },
     "rules": {
-        //"prettier/prettier": "error",
-        // "linebreak-style": [
-        //     "error",
-        //     "unix"
-        // ],
-        // "react-hooks/rules-of-hooks": "error",
-        // "react-hooks/exhaustive-deps": "warn",
+        "@typescript-eslint/no-explicit-any": "off",
         "react/no-typos": 2,
         "react/no-direct-mutation-state": 2,
         "react/no-redundant-should-component-update": 2,
@@ -78,6 +71,7 @@
                 "allowSingleExtends": true
             }
         ],
-        "@typescript-eslint/explicit-function-return-type": 0
+        "@typescript-eslint/explicit-function-return-type": 0,
+        "@typescript-eslint/explicit-module-boundary-types": "off"
     }
 }

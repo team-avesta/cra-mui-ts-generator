@@ -1,5 +1,5 @@
 import { ThunkDispatch } from 'redux-thunk';
-import { Action } from 'shared/interface/interfaces';
+import { IAction } from 'shared/interface/interfaces';
 import { IToasterAction, ToasterActionTypes } from './toaster.interface';
 import { ActionCreator } from 'redux';
 
@@ -22,7 +22,7 @@ export const showSuccessToast: ActionCreator<IToasterAction> = (customMsg: strin
 };
 
 export const hideToaster = () => {
-  return (dispatch: ThunkDispatch<any, any, Action>): Promise<unknown> => {
+  return (dispatch: ThunkDispatch<any, any, IAction>): Promise<unknown> => {
     return new Promise(function (resolve) {
       dispatch<IToasterAction>({
         type: ToasterActionTypes.HIDE_TOASTER,

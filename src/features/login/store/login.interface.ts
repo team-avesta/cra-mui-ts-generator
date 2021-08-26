@@ -8,7 +8,7 @@
  * @since  10/10/2019
  */
 
-import { Nullable } from "shared/interface/interfaces";
+import { Nullable } from 'shared/interface/interfaces';
 
 // login from values
 export interface ILoginVal {
@@ -45,12 +45,12 @@ export interface ILoginState {
 
 // Action types
 export enum LoginActionTypes {
-  LOGINSUCCESS = "LOGIN/LOGINSUCCESS",
-  LOGOUT = "LOGIN/LOGOUT",
-  ERROR = "LOGIN/ERROR",
-  RESETAUTHACTION = "LOGIN/RESETAUTHACTION",
-  AUTHACTION = "LOGIN/AUTHACTION",
-  SETLOADING = "LOGIN/SETLOADING",
+  LOGINSUCCESS = 'LOGIN/LOGINSUCCESS',
+  LOGOUT = 'LOGIN/LOGOUT',
+  ERROR = 'LOGIN/ERROR',
+  RESETAUTHACTION = 'LOGIN/RESETAUTHACTION',
+  AUTHACTION = 'LOGIN/AUTHACTION',
+  SETLOADING = 'LOGIN/SETLOADING',
 }
 
 // Actions
